@@ -1,25 +1,22 @@
-import './App.css';
-//install -->import { Routes, Route } from 'react-router-dom';
-
-// components
-//import NavBar from './components/NavBar';
-
-// pages
-//import Home from './pages/Home';
-
+import { useState } from "react";
+import "./App.css";
 
 function App() {
-    return (
-        <div className="App">
-            <h1>Appname</h1>
-            {/* <Navbar /> */}
-            {/* 
-            <Routes>
-                <Route path="/" element={<Home />} />
-            </Routes>     
-            */}
-        </div>
-    );
-};
+  const [darkLightModus, setDarkLightModus] = useState(true);
+  return (
+    <div
+      className="App"
+      style={{ backgroundColor: darkLightModus ? "white" : "black" }}
+    >
+      <button
+        onClick={() => {
+          setDarkLightModus(darkLightModus ? false : true);
+        }}
+      >
+        Light/Dark
+      </button>
+    </div>
+  );
+}
 
 export default App;
