@@ -5,6 +5,7 @@ const Search = () => {
   const [pokemons, setPokemons] = useState([]);
   const [selectedPokemon, setSelectedPokemon] = useState(null);
   const [selectedPokemonDetails, setSelectedPokemonDetails] = useState(null);
+  const [description, setDescription] = useState("");
 
   useEffect(() => {
     fetch("https://pokeapi.co/api/v2/pokemon")
@@ -16,7 +17,14 @@ const Search = () => {
     if (selectedPokemon) {
       fetch(selectedPokemon.url)
         .then((response) => response.json())
-        .then((json) => setSelectedPokemonDetails(json));
+        .then((json) => {
+          setSelectedPokemonDetails(json);
+          fetch(`https://pokeapi.co/api/v2/pokemon-species/${json.id}`)
+            .then((response) => response.json())
+            .then((json) => {
+              setDescription(json.flavor_text_entries[0].flavor_text);
+            });
+        });
     }
   }, [selectedPokemon]);
 
@@ -65,19 +73,15 @@ const Search = () => {
               alt={selectedPokemon.name}
             />
 
-            <p>Weight: {selectedPokemonDetails.weight}</p>
-            <p>Height: {selectedPokemonDetails.height}</p>
+            <p>Weight: {selectedPokemonDetails.weight / 10} kg</p>
+            <p>Height: {selectedPokemonDetails.height * 10} cm</p>
             <p>
               Moves:{" "}
               {selectedPokemonDetails.abilities
                 .map((abilityMovie) => abilityMovie.ability.name)
                 .join(", ")}
             </p>
-            <p className="description">
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolore
-              beatae libero optio rerum, nihil cum nemo quisquam officia quidem
-              voluptatum?
-            </p>
+            <p>{description}</p>
           </div>
         ) : (
           pokemons &&
