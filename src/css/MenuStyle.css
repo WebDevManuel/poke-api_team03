@@ -1,0 +1,111 @@
+@media only screen and (max-width: 800px) {
+    div {
+        margin: 10px;
+        padding: 10px;
+        box-sizing: border-box;
+    }
+
+    .types-container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(12, 1fr);
+        grid-column-gap: 0px;
+        grid-row-gap: 0px;
+    }
+
+    button {
+        font-size: 14px;
+        color: white;
+        border: 1px solid black;
+        border-radius: 5px;
+        width: 120px;
+        height: 35px;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        cursor: pointer;
+        transition: all 0.2s ease-in-out;
+    }
+
+    .bug {
+        background-color: #3BB900;
+    }
+
+    .dark {
+        background-color: #1c1c1c;
+    }
+
+    .dragon {
+        background-color: #00458a;
+    }
+
+    .electric {
+        background-color: #ffe600;
+    }
+
+    .fairy {
+        background-color: #ffc2f9;
+    }
+
+    .fighting {
+        background-color: #e40000;
+    }
+
+    .fire {
+        background-color: #ff9900;
+    }
+
+    .flying {
+        background-color: #ccdadd;
+    }
+
+    .ghost {
+        background-color: #5a1e64;
+    }
+
+    .grass {
+        background-color: #57921c;
+    }
+
+    .ground {
+        background-color: #965a00;
+    }
+
+    .ice {
+        background-color: #6ad2ff;
+    }
+
+    .normal {
+        background-color: #b3b3b3;
+    }
+
+    .plant {
+        background-color: #70df00;
+    }
+
+    .poison {
+        background-color: #ab00ae;
+    }
+
+    .psychic {
+        background-color: #ff81f2;
+    }
+
+    .rock {
+        background-color: #e1b237;
+    }
+
+    .steel {
+        background-color: #2a4950;
+    }
+
+    .water {
+        background-color: #00a0e4;
+    }
+
+
+    .types-container button:hover {
+        background-color: #f40101;
+    }
+
+}
