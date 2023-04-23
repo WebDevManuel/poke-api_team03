@@ -129,7 +129,7 @@ BACKBUTTON CONTAINER + BACKBUTTON
 ========================*/
   .backButtonContainer {
     width: 5vw;
-    height: 4vh;
+    height: 4.0001vh;
     margin: 0;
     padding: 0;
   }
