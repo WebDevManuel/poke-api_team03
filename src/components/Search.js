@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { MdArrowBackIosNew } from "react-icons/md";
+import { MdOutlineArrowBackIosNew } from "react-icons/md";
 import pokeLogo from '../images/pokeLogo2.png';
 import { CgDarkMode } from "react-icons/cg";
 import { Link } from "react-router-dom";
@@ -64,7 +64,6 @@ const Search = () => {
 
   return (
     <div style={{
-      //hier nach fehler suchen
       color: light ? "#040532" : "#8298fa",
       backgroundColor: light ? "#8298fa" : "#040532",
       height: "100%",
@@ -86,10 +85,9 @@ const Search = () => {
       <main>
         <section className="allPokeContainers">
           {selectedPokemonDetails ? (
-
             <div className="result-container">
               <div className="backButtonContainer">
-                <MdArrowBackIosNew onClick={handleGoBack} className="backButton" />
+                <MdOutlineArrowBackIosNew onClick={handleGoBack} className="backButton" />
               </div>
               <img
                 src={selectedPokemonDetails.sprites.front_default}
@@ -124,7 +122,7 @@ const Search = () => {
               return (
                 <Link className="pokemon-container" key={pokemon.name} to={pokemon.id}
                 >
-                  <div className="pokemon-box" style={{ backgroundImage: light ? 'radial-gradient(circle at 90.56% -7.92%, #ffffff 0, #f3f6ff 12.5%, #dde3fa 25%, #cfd8ff 37.5%, #c1ccfe 50%, #b4c1fe 62.5%, #a1b2ff 75%, #748dfa 87.5%, #5a78ff 100%)' : 'radial-gradient(circle at 90.56% -7.92%, #ffffff 0, #f3f6ff 12.5%, #cad4ff 25%, #93a6ff 37.5%, #6881f2 50%, #4664eb 62.5%, #2142d3 75%, #1534be 87.5%, #0a26a2 100%)' }} onClick={() => setSelectedPokemon(pokemon)}
+                  <div className="pokemon-box" style={{ backgroundImage: light ? 'radial-gradient(circle at 90.56% -7.92%, #ffffff 0, #f3f6ff 12.5%, #dde3fa 25%, #cfd8ff 37.5%, #c1ccfe 50%, #b4c1fe 62.5%, #a1b2ff 75%, #748dfa 87.5%, #5a78ff 100%)' : 'radial-gradient(circle at 90.56% -7.92%, #dae0fb 0, #b5c1f4 12.5%, #8d9ee9 25%, #576ed6 37.5%, #3652d1 50%, #132a91 62.5%, #09195d 75%, #040f42 87.5%, #020928 100%)' }} onClick={() => setSelectedPokemon(pokemon)}
                   >
                     <img src={myImageUrl} alt={pokemon.name} />
                     <h1>

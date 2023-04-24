@@ -11,14 +11,15 @@ import Search from "./components/Search";
 
 function App() {
   return (
+
     <div
       className="App"
-
     >
       <Routes>
         <Route path="/" element={<Search />}></Route>
       </Routes>
     </div>
+
   );
 }
 
