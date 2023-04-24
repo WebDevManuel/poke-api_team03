@@ -3,6 +3,7 @@ import { MdOutlineArrowBackIosNew } from "react-icons/md";
 import pokeLogo from "../images/pokeLogo2.png";
 import { CgDarkMode } from "react-icons/cg";
 import { Link } from "react-router-dom";
+import PokemonInfo from "./PokemonInfo";
 
 const Num0 = () => {
   const [search, setSearch] = useState("");
@@ -12,7 +13,6 @@ const Num0 = () => {
   const [description, setDescription] = useState("");
   const [light, setLight] = useState(true);
   const [numbers, setNumbers] = useState([0, 1, 2, 3, 4, 5]);
-
 
   useEffect(() => {
     fetch("https://pokeapi.co/api/v2/pokemon?offset=30&limit=30")
@@ -104,6 +104,7 @@ const Num0 = () => {
         <section className="allPokeContainers">
           {selectedPokemonDetails ? (
             <div className="result-container">
+              <PokemonInfo />
               <div className="backButtonContainer">
                 <MdOutlineArrowBackIosNew
                   onClick={handleGoBack}

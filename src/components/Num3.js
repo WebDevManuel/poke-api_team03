@@ -3,6 +3,7 @@ import { MdOutlineArrowBackIosNew } from "react-icons/md";
 import pokeLogo from "../images/pokeLogo2.png";
 import { CgDarkMode } from "react-icons/cg";
 import { Link } from "react-router-dom";
+import PokemonInfo from "./PokemonInfo";
 
 const Num3 = () => {
   const [search, setSearch] = useState("");
@@ -103,6 +104,8 @@ const Num3 = () => {
         <section className="allPokeContainers">
           {selectedPokemonDetails ? (
             <div className="result-container">
+              <PokemonInfo />
+
               <div className="backButtonContainer">
                 <MdOutlineArrowBackIosNew
                   onClick={handleGoBack}
