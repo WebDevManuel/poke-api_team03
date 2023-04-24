@@ -3,6 +3,7 @@ import { MdOutlineArrowBackIosNew } from "react-icons/md";
 import pokeLogo from "../images/pokeLogo2.png";
 import { CgDarkMode } from "react-icons/cg";
 import { Link } from "react-router-dom";
+import PokemonInfo from "./PokemonInfo";
 
 const Search = () => {
   const [search, setSearch] = useState("");
@@ -11,10 +12,9 @@ const Search = () => {
   const [selectedPokemonDetails, setSelectedPokemonDetails] = useState(null);
   const [description, setDescription] = useState("");
   const [light, setLight] = useState(true);
-  const [numbers, setNumbers] = useState([0, 1, 2, 3, 4, 5]);
 
   useEffect(() => {
-    fetch("https://pokeapi.co/api/v2/pokemon?offset=0&limit=30")
+    fetch("https://pokeapi.co/api/v2/pokemon")
       .then((response) => response.json())
       .then((json) => setPokemons(json.results));
   }, []);
@@ -87,22 +87,15 @@ const Search = () => {
           onKeyPress={handleKeyDown}
         />
         <button onClick={searchFunction}>
-          <span className="blinkSearch">Search</span>
-          <div className="numbers">
-            {numbers.map((num) => {
-              return (
-                <Link key={num} to={`/num${num}`}>
-                  {num}
-                </Link>
-              );
-            })}
-          </div>
+          {" "}
+          <span className="blinkSearch">Search</span>{" "}
         </button>
       </section>
       <main>
         <section className="allPokeContainers">
           {selectedPokemonDetails ? (
             <div className="result-container">
+              <PokemonInfo />
               <div className="backButtonContainer">
                 <MdOutlineArrowBackIosNew
                   onClick={handleGoBack}
