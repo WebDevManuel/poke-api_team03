@@ -4,7 +4,7 @@ import pokeLogo from "../images/pokeLogo2.png";
 import { CgDarkMode } from "react-icons/cg";
 import { Link } from "react-router-dom";
 
-const Search = () => {
+const Num0 = () => {
   const [search, setSearch] = useState("");
   const [pokemons, setPokemons] = useState([]);
   const [selectedPokemon, setSelectedPokemon] = useState(null);
@@ -13,8 +13,9 @@ const Search = () => {
   const [light, setLight] = useState(true);
   const [numbers, setNumbers] = useState([0, 1, 2, 3, 4, 5]);
 
+
   useEffect(() => {
-    fetch("https://pokeapi.co/api/v2/pokemon?offset=0&limit=30")
+    fetch("https://pokeapi.co/api/v2/pokemon?offset=30&limit=30")
       .then((response) => response.json())
       .then((json) => setPokemons(json.results));
   }, []);
@@ -137,8 +138,8 @@ const Search = () => {
           ) : (
             pokemons &&
             pokemons.map((pokemon, imageIndex) => {
-              const pokemonImageNumber = imageIndex + 1;
-              const pokemonIdNumber = imageIndex + 1;
+              const pokemonImageNumber = imageIndex + 31;
+              const pokemonIdNumber = imageIndex + 31;
               const myImageUrl = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokemonImageNumber}.png`;
               const myIdNumber = `${pokemonIdNumber}`.padStart(3, 0);
               return (
@@ -173,4 +174,4 @@ const Search = () => {
   );
 };
 
-export default Search;
+export default Num0;

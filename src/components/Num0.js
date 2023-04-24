@@ -4,7 +4,7 @@ import pokeLogo from "../images/pokeLogo2.png";
 import { CgDarkMode } from "react-icons/cg";
 import { Link } from "react-router-dom";
 
-const Search = () => {
+const Num0 = () => {
   const [search, setSearch] = useState("");
   const [pokemons, setPokemons] = useState([]);
   const [selectedPokemon, setSelectedPokemon] = useState(null);
@@ -173,4 +173,4 @@ const Search = () => {
   );
 };
 
-export default Search;
+export default Num0;
