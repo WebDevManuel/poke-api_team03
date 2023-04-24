@@ -1,4 +1,4 @@
-@media only screen and (max-width: 800px) {
+@media only screen and (max-width: 1200px) {
 
   @font-face {
     font-family: pokemonSolidFont;
@@ -36,7 +36,8 @@
 ========================*/
   .search-container {
     text-align: center;
-    margin-top: 1vh;
+    margin: 1vh auto 3vh auto;
+    position: relative;
   }
 
   .search-container input {
@@ -50,12 +51,12 @@
     width: 33vw;
     height: 3vh;
     margin-right: 2.3vw;
-    box-shadow: 0.5px 0.5px 7px 4px #ffcc00;
+    box-shadow: 0.5px 0.5px 6px 3px #ffcc00;
   }
 
   .search-container input:focus {
     background-color: #feffd1;
-    box-shadow: 0.5px 0.5px 7px 4px #fbff00;
+    box-shadow: 0.5px 0.5px 9px 8px #fbff00;
     border: 0px;
     outline: 1px solid #fdeba3;
     color: rgb(44, 45, 51);
@@ -112,15 +113,34 @@
   /*=======================
 LIGHTMODE BUTTON
 ========================*/
-
   .lightModeButton {
-    margin: 0;
-    padding: 0;
-    width: 5vw;
-    height: 4vh;
-    color: #fbff00;
+    /* margin: 0 6.5vw 0 0; */
+    /* padding: 0; */
+    width: 3vw;
+    height: 2.6vh;
+    color: #f8fa62;
     animation: pulseContainer 2s ease-in-out infinite;
     border-radius: 50%;
+
+    position: absolute;
+    top: 0.4vh;
+    left: 15vw;
+  }
+
+  .lightModeButton:hover {
+    box-shadow: 0.5px 0.5px 7px 4px #fbff26;
+    background-color: #fbff26;
+    color: rgb(181, 182, 191);
+    font-weight: 900;
+    transition-delay: 0.13s;
+  }
+
+  .lightModeButton:active {
+    background-color: #ffcc00;
+    box-shadow: 0.5px 0.5px 8px 5px #ffcc00;
+    border: 1px solid #ffcc00;
+    color: rgb(255, 254, 235);
+    font-weight: 900;
   }
 
 
@@ -128,8 +148,8 @@ LIGHTMODE BUTTON
 BACKBUTTON CONTAINER + BACKBUTTON
 ========================*/
   .backButtonContainer {
-    width: 5vw;
-    height: 4.0001vh;
+    width: 4vw;
+    height: 4vh;
     margin: 0;
     padding: 0;
   }
@@ -137,7 +157,7 @@ BACKBUTTON CONTAINER + BACKBUTTON
   .backButton {
     margin: 0;
     padding: 0;
-    width: 8vw;
+    width: 5vw;
     height: 5vh;
     color: #fbff00;
     animation: pulseContainer 2s ease-in-out infinite;
@@ -146,10 +166,11 @@ BACKBUTTON CONTAINER + BACKBUTTON
 
   .backButton:hover {
     background-color: #fbff26;
-    color: rgb(94, 98, 117);
+    color: rgb(255, 255, 255);
     font-weight: 900;
-    transition-delay: 0.05s;
-    box-shadow: 0.5px 0.5px 8px 5px #fbff26;
+    transition-delay: 0.13s;
+    box-shadow: 0.5px 0.5px 6px 3.5px #fbff26;
+    opacity: 92%;
   }
 
   .backButton:active {
@@ -167,7 +188,7 @@ BACKBUTTON CONTAINER + BACKBUTTON
   .allPokeContainers {
     display: grid;
     grid-template-columns: repeat(2, 41vw);
-    gap: 2.7vh 3.7vw;
+    gap: 3.7vh 3vw;
     margin: 5vh auto 0 auto;
     width: max-content;
     padding-bottom: 5vh;
@@ -200,8 +221,9 @@ BACKBUTTON CONTAINER + BACKBUTTON
   }
 
   .pokemon-container div h1 {
-    font-size: 1.6rem;
+    font-size: 2.2rem;
     font-family: pokemonSolidFont;
+    text-decoration: underline;
     color: #ffcc00;
     text-shadow: -2px -2px 2px rgb(51, 89, 170);
     letter-spacing: 3.5px;
@@ -209,9 +231,11 @@ BACKBUTTON CONTAINER + BACKBUTTON
   }
 
   .pokemon-container div p {
-    font-size: 0.85rem;
+    font-size: 1.1rem;
     color: #ffcc00;
     font-family: pressStartFont;
+    text-decoration: underline;
+    text-decoration-thickness: 1.45px;
     text-shadow: -2px -2px 2px rgb(51, 89, 170);
     margin-bottom: 1.5vh;
   }
@@ -284,7 +308,6 @@ BACKBUTTON CONTAINER + BACKBUTTON
     text-shadow: -2.5px -2.7px 2px rgb(51, 89, 170);
     margin: 0;
 
-
   }
 
   .pokemon-box p {
@@ -304,17 +327,14 @@ RESULT CONTAINER
   }
 
   .result-container img {
-    width: 42vw;
+    width: 37vw;
     animation: pulseContainer 2s ease-in-out infinite;
-    position: relative;
-    animation: bounce 1s infinite alternate;
   }
 
   .result-container h1 {
     font-size: 3.1rem;
     font-family: pokemonSolidFont;
     letter-spacing: 6px;
-    /* text-align: center; */
     animation: pulseContainer 2s ease-in-out infinite;
     color: #ffcc00;
     text-shadow: -3.5px -4px 3px rgb(51, 89, 170);
@@ -327,10 +347,8 @@ RESULT CONTAINER
     margin: 0 auto;
     text-align: start;
     word-spacing: 0.5rem;
-    line-height: 1.3rem;
+    line-height: 1.9rem;
     color: white;
-    font-size: 1rem;
+    font-size: 1.3rem;
   }
-
-
 }
