@@ -3,7 +3,12 @@ import "./MenuStyle.css";
 function Menu() {
     return (
         <div>
-            <p>Type</p>
+            <header>
+                <div className="logoContainer">
+                <img className="pokeLogo" src={pokeLogo} alt="logo Pokemon" />
+                </div>
+                    <h1 className="typetext">Type</h1>
+            </header>
             <div className="types-container">
                 <div >
                     <button className="bug">Bug</button>
@@ -63,6 +68,12 @@ function Menu() {
                     <button className="water">Water</button>
                 </div>
             </div>
+                    <section className="search">
+                    <button>Search</button>
+                    </section>
+            <footer>
+                <p>© 2021 Pokémon. © 1995-2021 Nintendo/Creatures Inc./GAME FREAK inc. TM, ® and Pokémon character names are trademarks of Nintendo.</p>
+            </footer>
         </div>
     );
 }
