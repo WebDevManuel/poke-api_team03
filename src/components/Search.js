@@ -154,7 +154,7 @@ const Search = () => {
                       {pokemon.name.charAt(0).toUpperCase() +
                         pokemon.name.slice(1)}
                     </h1>
-                    <p className="pokemonId">#{myIdNumber}</p>
+                    <p className="pokemonId">{myIdNumber}</p>
                   </div>
                 </Link>
               );
