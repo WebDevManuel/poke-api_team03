@@ -1,16 +1,5 @@
 @media only screen and (max-width: 800px) {
 
-    @font-face {
-        font-family: pokemonSolidFont;
-        src: url('./fonts/pokemon_solid/pokemonsolid.ttf');
-    }
-
-    @font-face {
-        font-family: pressStartFont;
-        src: url('./fonts/Press_Start_2P/PressStart2P-Regular.ttf');
-    }
-
-
     /*=======================
             GENERALS
     ========================*/
