@@ -57,6 +57,13 @@ const Search = () => {
     }
   };
 
+  const handleGoBack = () => {
+    setSelectedPokemon(null);
+    setSelectedPokemonDetails(null);
+    setDescription("");
+    setSearch("");
+  };
+
   return (
     <div
       style={{
