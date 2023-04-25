@@ -44,12 +44,12 @@
     text-align: center;
     border: 0;
     font-family: pressStartFont;
-    font-size: 0.7rem;
+    font-size: 0.9rem;
     color: rgb(153, 156, 167);
     background-color: #fbf0a9;
     border-radius: 8px;
     width: 33vw;
-    height: 3vh;
+    height: 3.5vh;
     margin-right: 2.3vw;
     box-shadow: 0.5px 0.5px 6px 3px #ffcc00;
   }
@@ -65,14 +65,15 @@
 
   .search-container button {
     width: 15vw;
-    height: 3.4vh;
+    height: 4vh;
     background-color: #fbff00;
     color: rgb(130, 136, 159);
     font-family: pressStartFont;
-    font-size: 0.64rem;
+    font-size: 0.8rem;
     border: 1px solid #fbff00;
     border-radius: 8px;
     transition: all 0.1s ease-in-out;
+    transform: translateY(-0.2vh);
   }
 
   .search-container button:hover {
@@ -350,5 +351,92 @@ RESULT CONTAINER
     line-height: 1.9rem;
     color: white;
     font-size: 1.3rem;
+  }
+
+
+  /*=======================
+POKEMON INFO 
+========================*/
+  .pokemonInfo {
+    margin-top: 10vh;
+    /* background: rgb(107, 128, 218);
+    background: linear-gradient(47deg, rgba(107, 128, 218, 1) 0%, rgba(130, 152, 250, 1) 35%, rgba(152, 171, 255, 1) 83%); */
+    padding-top: 2vh;
+    border-radius: 15px;
+    box-shadow: -0.5px 0.5px 1px 1px rgb(93, 125, 196);
+  }
+
+  .pokemonInfo h2 {
+    font-size: 1.6rem;
+    font-family: pressStartFont;
+    color: #ffcc00;
+    margin-bottom: 5vh;
+    text-decoration: underline;
+    text-shadow: -3px -3.5px 3px rgb(51, 89, 170);
+  }
+
+
+  /*=======================
+    BASE STATS
+========================*/
+  .baseStats {
+    border-radius: 0.5%;
+    padding-bottom: 3vh;
+  }
+
+  .baseStats div {
+    display: flex;
+    justify-content: flex-start;
+  }
+
+  .baseStats div p:nth-of-type(1) {
+    font-size: 1.1rem;
+    color: #ffcc00;
+    text-shadow: -1.5px -1.8px 3px rgb(51, 89, 170);
+    width: 30%;
+    text-align: right;
+    margin: 0 0 0 3%;
+  }
+
+  .baseStats div p:nth-of-type(2) {
+    font-size: 1.2rem;
+    width: 8%;
+    margin: 0 0 0 1%;
+  }
+
+
+  /*=======================
+  BASE STATS
+  ========================*/
+  .powerBar {
+    width: 50%;
+    height: 1vh;
+    background-color: rgb(139, 143, 209);
+    transform: translateY(1vh);
+    animation: fadeIn 5s;
+    box-shadow: -1.5px -1.8px 3px rgb(51, 89, 170);
+
+  }
+
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+
+    100% {
+      opacity: 1;
+    }
+  }
+
+  /*=======================
+NUMBERS PAGES
+  ========================*/
+  .numbersPages {
+    font-size: 1.9rem;
+    font-family: pressStartFont;
+    margin: 5vh auto;
+    letter-spacing: 1vw;
+    color: white;
+    transform: translateX(22.5vw);
   }
 }

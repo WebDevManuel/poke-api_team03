@@ -12,6 +12,7 @@ const Search = () => {
   const [selectedPokemonDetails, setSelectedPokemonDetails] = useState(null);
   const [description, setDescription] = useState("");
   const [light, setLight] = useState(true);
+  const [numbers, setNumbers] = useState([0, 1, 2, 3, 4, 5]);
 
   useEffect(() => {
     fetch("https://pokeapi.co/api/v2/pokemon")
@@ -87,15 +88,13 @@ const Search = () => {
           onKeyPress={handleKeyDown}
         />
         <button onClick={searchFunction}>
-          {" "}
           <span className="blinkSearch">Search</span>{" "}
         </button>
-      </section>
+      </section >
       <main>
         <section className="allPokeContainers">
           {selectedPokemonDetails ? (
             <div className="result-container">
-              <PokemonInfo />
               <div className="backButtonContainer">
                 <MdOutlineArrowBackIosNew
                   onClick={handleGoBack}
@@ -126,6 +125,7 @@ const Search = () => {
                   .join(", ")}
               </p>
               <p>{description}</p>
+              <PokemonInfo />
             </div>
           ) : (
             pokemons &&
@@ -160,9 +160,18 @@ const Search = () => {
               );
             })
           )}
+          <div className="numbersPages">
+            {numbers.map((num) => {
+              return (
+                <Link key={num} to={`/num${num}`}>
+                  {num}
+                </Link>
+              );
+            })}
+          </div>
         </section>
       </main>
-    </div>
+    </div >
   );
 };
 

@@ -14,6 +14,8 @@ const Num2 = () => {
   const [light, setLight] = useState(true);
   const [numbers, setNumbers] = useState([0, 1, 2, 3, 4, 5]);
 
+
+
   useEffect(() => {
     fetch("https://pokeapi.co/api/v2/pokemon?offset=60&limit=30")
       .then((response) => response.json())
@@ -89,22 +91,12 @@ const Num2 = () => {
         />
         <button onClick={searchFunction}>
           <span className="blinkSearch">Search</span>
-          <div className="numbers">
-            {numbers.map((num) => {
-              return (
-                <Link key={num} to={`/num${num}`}>
-                  {num}
-                </Link>
-              );
-            })}
-          </div>
         </button>
       </section>
       <main>
         <section className="allPokeContainers">
           {selectedPokemonDetails ? (
             <div className="result-container">
-              <PokemonInfo />
               <div className="backButtonContainer">
                 <MdOutlineArrowBackIosNew
                   onClick={handleGoBack}
@@ -135,6 +127,7 @@ const Num2 = () => {
                   .join(", ")}
               </p>
               <p>{description}</p>
+              <PokemonInfo />
             </div>
           ) : (
             pokemons &&
@@ -169,6 +162,15 @@ const Num2 = () => {
               );
             })
           )}
+          <div className="numbersPages">
+            {numbers.map((num) => {
+              return (
+                <Link key={num} to={`/num${num}`}>
+                  {num}
+                </Link>
+              );
+            })}
+          </div>
         </section>
       </main>
     </div>
