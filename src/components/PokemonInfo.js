@@ -23,16 +23,31 @@ function PokemonInfo() {
     };
   });
 
+
+
+
+  const statBarStyle = {
+    width: `${stats.baseStat}%`,
+    height: "10px",
+    backgroundColor: "#fbff26",
+    transition: "width 2s ease-in-out",
+
+  };
+
   return (
-    <div>
-      <h1>{pokemonData.name}</h1>
-      <ul>
+    <div className="pokemonInfo">
+      <h2>BASE STATS</h2>
+      <div className="baseStats">
         {stats.map((stat) => (
-          <li key={stat.name}>
-            {stat.name}: {stat.baseStat}
-          </li>
+          <div key={stat.name}>
+            <p>{stat.name}: </p>
+            <p>{stat.baseStat}</p>
+            <article className="powerBar">
+              <div style={{ ...statBarStyle, width: `${stat.baseStat}%` }}></div>
+            </article>
+          </div>
         ))}
-      </ul>
+      </div>
     </div>
   );
 }
