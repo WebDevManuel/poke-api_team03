@@ -1,11 +1,48 @@
-import React from "react";
-import "./MenuStyle.css";
-function Menu() {
+import { useState, useEffect } from "react";
+
+import "../css/TypeStyle.css";
+import TypeItem from "../components/TypeItem";
+function Type() {
+    const [types, setTypes] = useState([]);
+    // map types
+    useEffect(() => {
+        fetch('https://pokeapi.co/api/v2/type')
+            .then(response => response.json())
+            .then(json => {
+                // setTypes(json.results[3].name);
+                setTypes(json.results);
+                /* const typeFilter = types.filter((elt)=>{
+                    return elt.name==
+                }) */
+            })
+    }, []);
+
+    //filterfunction hier einfügen
+    // auf das result des filters drüber mappen 
+
+
+
+    // console.log(typeof types);
+    // console.log(types);
+
     return (
-        <div>
-            <p>Type</p>
-            <div className="types-container">
-                <div >
+        <div className="types-container">
+            {/* <h2>Type</h2> */}
+            {types.map((type, i) => {
+                return (
+                    // console.log(type.name)
+                    <TypeItem
+                        key={i}
+                        name={type.name}
+                    />
+                )
+            })}
+
+
+
+
+
+            {/* <div >
                     <button className="bug">Bug</button>
                 </div>
                 <div >
@@ -61,9 +98,8 @@ function Menu() {
                 </div>
                 <div >
                     <button className="water">Water</button>
-                </div>
-            </div>
+                </div> */}
         </div>
     );
 }
-export default Menu;
+export default Type;
